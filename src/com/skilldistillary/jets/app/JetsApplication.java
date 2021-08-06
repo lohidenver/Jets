@@ -1,12 +1,23 @@
 package com.skilldistillary.jets.app;
 
+import java.util.Scanner;
+
 import com.skilldistillery.jets.entities.AirField;
 
-public class JetsApplication {
-	private AirField airField;
+public class JetsApplication {//Beginning Class
+	Scanner uI = new Scanner(System.in);
 	
-	public static void main(String[] args) {
+	
+	public static void main(String[] args) {//Beginning Main
+		//private AirField airField = new airField;
+		JetsApplication run = new JetsApplication();
+		run.launchJets();
+		
+	}//End Main
 
+	private void launchJets() {//Beginning launchJets
+		int uInput = 0;
+		do {
 		System.out.println("                                 /\\\n"
 				+ "1. List fleet                   |  |            J\n"
 				+ "2. Fly all jets                 |  |            E\n"
@@ -35,6 +46,29 @@ public class JetsApplication {
 				+ "                      .' |_./ |      | \\._| '.\n"
 				+ "                     /     _.-|||  |||-._     \\\n"
 				+ "                     \\__.-'   \\||/\\||/   '-.__/ ");
-	}
-
-}
+		uInput = uI.nextInt();
+		if(uInput == 1) {
+			System.out.println("Here are your current jets!");
+		} else if (uInput == 2) {
+			System.out.println("Fly All Jets");
+		} else if (uInput == 3) {
+			System.out.println("View fastest jet ");
+		} else if (uInput == 4) {
+			System.out.println("View jet with longest range");
+		} else if (uInput == 5) {
+			System.out.println("Load all Cargo Jets ");
+		} else if (uInput == 6) {
+			System.out.println("Dogfight!");
+		} else if (uInput == 7) {
+			System.out.println("Add a jet to Fleet");
+		} else if (uInput == 8) {
+			System.out.println("Remove a jet from Fleet");
+		} else if (uInput == 9) {
+			System.out.println("You have chosen to exit.");
+			System.exit(0);
+		} 
+		}//end Do loop
+		while (uInput != 9);
+		}//end launchJets
+		
+}//End Class
