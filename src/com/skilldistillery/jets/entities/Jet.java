@@ -47,7 +47,4 @@ public abstract class Jet {
 	
 
 	
-	
-	
-	
-}
+}//end Jet

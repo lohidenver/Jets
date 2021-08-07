@@ -1,3 +1,11 @@
 // type, model, speed, range, price
+//model, speed, range, price
 
+
+
+fighter, Lockheed SR-71 Blackbird, 2500, 3337, 25000000
+fighter, Lockheed YF-12, 2275, 3000, 159821176
+fighter, Dassualt Mirage 2000, 1453, 960, 30138650
+cargo, Boeing 747 Freighter, 570, 8890, 150000000
+cargo, Lockheed R6V Constitution, 303, 5390, 225024294
 

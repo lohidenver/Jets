@@ -3,6 +3,7 @@ package com.skilldistillary.jets.app;
 import java.util.Scanner;
 
 
+
 import com.skilldistillery.jets.entities.AirField;
 
 public class JetsApplication {//Beginning Class
@@ -17,8 +18,9 @@ public class JetsApplication {//Beginning Class
 	}//End Main
 
 	private void launchJets() {//Beginning launchJets
-		int uInput = 0;
-		do {
+		
+		
+		while (true) {
 		System.out.println("                                 /\\\n"
 				+ "1. List fleet                   |  |            J\n"
 				+ "2. Fly all jets                 |  |            E\n"
@@ -42,34 +44,44 @@ public class JetsApplication {//Beginning Class
 				+ "                             /|  ||  |\\\n"
 				+ "                            / |  ||  | \\\n"
 				+ "                           /  |  \\/  |  \\\n"
-				+ "                          /   |      |   \\   \n"
-				+ "                        //   .|      |.   \\\\\n"
-				+ "                      .' |_./ |      | \\._| '.\n"
+				+ "     Please Enter The     /   |      |   \\   \n"
+				+ "     Number of Your      //   .|      |.   \\\\\n"
+				+ "     Choice.           .' |_./ |      | \\._| '.\n"
 				+ "                     /     _.-|||  |||-._     \\\n"
 				+ "                     \\__.-'   \\||/\\||/   '-.__/ ");
-		uInput = uI.nextInt();
-		if(uInput == 1) {
+		
+		Scanner scanner = new Scanner(System.in);
+		String uInput = scanner.nextLine();
+		
+		if(uInput.equals("1")) {
 			System.out.println("Here are your current jets!");
-		} else if (uInput == 2) {
+		} else if ((uInput.equals("2"))) {
 			System.out.println("Fly All Jets");
-		} else if (uInput == 3) {
+			//airField.flyAll();
+		} else if ((uInput.equals("3"))) {
 			System.out.println("View fastest jet ");
-		} else if (uInput == 4) {
+			//airField.fastestJet();
+		} else if ((uInput.equals("4"))) {
 			System.out.println("View jet with longest range");
-		} else if (uInput == 5) {
+			//airField.longestRange();
+		} else if ((uInput.equals("5"))) {
 			System.out.println("Load all Cargo Jets ");
-		} else if (uInput == 6) {
+			//airField.allCargo();
+		} else if ((uInput.equals("6"))) {
 			System.out.println("Dogfight!");
-		} else if (uInput == 7) {
+			//airField.dogFight();
+		} else if ((uInput.equals("7"))) {
 			System.out.println("Add a jet to Fleet");
-		} else if (uInput == 8) {
+			//airField.addJet
+		} else if ((uInput.equals("8"))) {
 			System.out.println("Remove a jet from Fleet");
-		} else if (uInput == 9) {
+			//airField.removeJet
+		} else if ((uInput.equals("9"))) {
 			System.out.println("You have chosen to exit.");
 			System.exit(0);
 		} 
-		}//end Do loop
-		while (uInput != 9);
+	
+		}//end while loop
 		}//end launchJets
-		
+	
 }//End Class
