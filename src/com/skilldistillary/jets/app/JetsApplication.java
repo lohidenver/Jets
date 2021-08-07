@@ -2,6 +2,7 @@ package com.skilldistillary.jets.app;
 
 import java.util.Scanner;
 
+
 import com.skilldistillery.jets.entities.AirField;
 
 public class JetsApplication {//Beginning Class
@@ -9,7 +10,7 @@ public class JetsApplication {//Beginning Class
 	
 	
 	public static void main(String[] args) {//Beginning Main
-		//private AirField airField = new airField;
+		AirField airField = new AirField();
 		JetsApplication run = new JetsApplication();
 		run.launchJets();
 		
