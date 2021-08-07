@@ -1,4 +1,5 @@
-package com.skilldistillary.jets.app;
+package com.skilldistillery.jets.app;
+
 
 import java.util.Scanner;
 
@@ -7,17 +8,21 @@ import java.util.Scanner;
 import com.skilldistillery.jets.entities.AirField;
 
 public class JetsApplication {//Beginning Class
-	Scanner uI = new Scanner(System.in);
+	
 	
 	
 	public static void main(String[] args) {//Beginning Main
-		AirField airField = new AirField();
+		
 		JetsApplication run = new JetsApplication();
 		run.launchJets();
 		
 	}//End Main
 
 	private void launchJets() {//Beginning launchJets
+		
+		AirField airField = new AirField();
+		Scanner scanner = new Scanner(System.in);
+		String uInput;
 		
 		
 		while (true) {
@@ -50,17 +55,17 @@ public class JetsApplication {//Beginning Class
 				+ "                     /     _.-|||  |||-._     \\\n"
 				+ "                     \\__.-'   \\||/\\||/   '-.__/ ");
 		
-		Scanner scanner = new Scanner(System.in);
-		String uInput = scanner.nextLine();
 		
+		uInput = scanner.nextLine();
 		if(uInput.equals("1")) {
 			System.out.println("Here are your current jets!");
+			airField.listJets();
 		} else if ((uInput.equals("2"))) {
-			System.out.println("Fly All Jets");
-			//airField.flyAll();
+			System.out.println("Fly All Jets");	
+			airField.flyAll();
 		} else if ((uInput.equals("3"))) {
 			System.out.println("View fastest jet ");
-			//airField.fastestJet();
+			airField.fastestJet();
 		} else if ((uInput.equals("4"))) {
 			System.out.println("View jet with longest range");
 			//airField.longestRange();
@@ -72,10 +77,10 @@ public class JetsApplication {//Beginning Class
 			//airField.dogFight();
 		} else if ((uInput.equals("7"))) {
 			System.out.println("Add a jet to Fleet");
-			//airField.addJet
+			//airField.addJet();
 		} else if ((uInput.equals("8"))) {
 			System.out.println("Remove a jet from Fleet");
-			//airField.removeJet
+			//airField.removeJet();
 		} else if ((uInput.equals("9"))) {
 			System.out.println("You have chosen to exit.");
 			System.exit(0);
