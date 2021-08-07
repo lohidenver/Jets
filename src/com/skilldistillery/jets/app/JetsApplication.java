@@ -68,13 +68,13 @@ public class JetsApplication {//Beginning Class
 			airField.fastestJet();
 		} else if ((uInput.equals("4"))) {
 			System.out.println("View jet with longest range");
-			//airField.longestRange();
+			airField.longestRange();
 		} else if ((uInput.equals("5"))) {
 			System.out.println("Load all Cargo Jets ");
-			//airField.allCargo();
+			airField.allCargo();
 		} else if ((uInput.equals("6"))) {
 			System.out.println("Dogfight!");
-			//airField.dogFight();
+			airField.dogFight();
 		} else if ((uInput.equals("7"))) {
 			System.out.println("Add a jet to Fleet");
 			//airField.addJet();

@@ -16,7 +16,7 @@ public class CargoPlane extends Jet {
 
 	public void cargoLoad () {
 		System.out.println("      __|__\n"
-				+ "*---o--(_)--o---*\n" + this.getModel() + " has cargo.");
+				+ "*---o--(_)--o---*\n" + this.getModel() + " has cargo.\n");
 	}
 
 }

@@ -71,7 +71,7 @@ public class AirField {//Begin AirField
 				fastestJet = jet;
 			}
 		}
-		
+		System.out.println(fastestJet);
 		return fastestJet;
 	};//end fastestJet
 	
@@ -82,15 +82,28 @@ public class AirField {//Begin AirField
 				longestRange = jet;
 			}
 		}
+		System.out.println(longestRange);
 		return longestRange;
 	};//end longestRange
 	
 	public void allCargo() {
+		for (Jet jet : jets) {
+			System.out.println("inside allCargo");
+			if (jet instanceof CargoPlane) {
+				System.out.println(jet);
+				((CargoPlane) jet).cargoLoad();
+			}
+		}
+		System.out.println();
 		
 	};//end allCargo
 	
 	public void dogFight () {
-		
+		for (Jet jet : jets) {
+			if (jet instanceof FighterJet) {
+				((FighterJet) jet).fight();
+			}
+		}
 	};//end dogFight
 	
 	public void addJet () {

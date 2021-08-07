@@ -48,7 +48,7 @@ public abstract class Jet {
 	
 	public void fly() {
 		System.out.println("      __|__\n"
-				+ "*---o--(_)--o---*" + this.getModel() + " is in the air.");
+				+ "*---o--(_)--o---* " + this.getModel() + " is in the air.\n");
 		
 	}
 	

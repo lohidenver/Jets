@@ -13,7 +13,7 @@ public class FighterJet extends Jet implements Dogfight{
 	
 	public void fight() {
 		System.out.println("      __|__\n"
-				+ "*---o--(_)--o---*\n" + getModel() + " is under attack!");
+				+ "*---o--(_)--o---*\n" + getModel() + " is under attack!\n");
 	}
 
 }
