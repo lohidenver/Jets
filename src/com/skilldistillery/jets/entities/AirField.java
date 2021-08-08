@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class AirField {//Begin AirField
 	
@@ -15,12 +16,12 @@ public class AirField {//Begin AirField
 	public AirField () {
 		initialAirField();
 		System.out.println(jets.size());
-	};
+	}
 	
 	public List<Jet> getJets() {
 		
 		return jets;//
-	};//end getJets
+	}//end getJets
 	
 	public void initialAirField () {
 		File fileJets = new File("Jets.txt");
@@ -56,13 +57,13 @@ public class AirField {//Begin AirField
 		}
 		
 		//
-	};//end initialAirField
+	}//end initialAirField
 	
 	public void flyAll() {
 		for (Jet jet : jets) {
 			jet.fly();
 		}
-	};//end flyAll
+	}//end flyAll
 	
 	public Jet fastestJet() {
 		Jet fastestJet = jets.get(0);
@@ -73,7 +74,7 @@ public class AirField {//Begin AirField
 		}
 		System.out.println(fastestJet);
 		return fastestJet;
-	};//end fastestJet
+	}//end fastestJet
 	
 	public Jet longestRange () {
 		Jet longestRange = jets.get(0);
@@ -84,19 +85,17 @@ public class AirField {//Begin AirField
 		}
 		System.out.println(longestRange);
 		return longestRange;
-	};//end longestRange
+	}//end longestRange
 	
 	public void allCargo() {
 		for (Jet jet : jets) {
-			System.out.println("inside allCargo");
 			if (jet instanceof CargoPlane) {
-				System.out.println(jet);
 				((CargoPlane) jet).cargoLoad();
 			}
 		}
-		System.out.println();
+
 		
-	};//end allCargo
+	}//end allCargo
 	
 	public void dogFight () {
 		for (Jet jet : jets) {
@@ -104,15 +103,64 @@ public class AirField {//Begin AirField
 				((FighterJet) jet).fight();
 			}
 		}
-	};//end dogFight
+	}//end dogFight
 	
 	public void addJet () {
+		String type;
+		String model;
+		double speed;
+		int range;
+		long price;
 		
-	};//end addJet
+		Scanner uI = new Scanner(System.in);
+		
+		//uI.nextLine();
+		
+		System.out.println("What kind of jet do you have? Cargo, Fighter, Passenger  ");
+		type = uI.nextLine();
+		System.out.println("What model of jet do you have?  ");
+		model= uI.nextLine();
+		System.out.println("What is the speed of the jet?  ");
+		speed = uI.nextDouble();
+		System.out.println("What is the range of you jet?  ");
+		range = uI.nextInt();
+		System.out.println("What is the price(USD) of your jet?  ");
+		price = uI.nextLong();
+		
+		Jet userJet = null;
+		
+	
+		if (type.equalsIgnoreCase("cargo")) {
+			userJet = new CargoPlane(model, speed, range, price);
+		} else if (type.equalsIgnoreCase("fighter")) {
+			userJet = new FighterJet(model, speed, range, price);
+		} else {
+			userJet = new PassengerJet(model, speed, range, price);
+		}
+		
+		jets.add(userJet);
+		
+		System.out.println("Added " + userJet.getModel() + " to the fleet.");
+		
+		
+		
+	}//end addJet
 	
 	public void removeJet () {
+		Scanner uI = new Scanner(System.in);
+		//uI.hasNextLine();
+		int i = 1;
+		int removeJet;
 		
-	};//end removeJet
+		for (Jet jet : jets) {
+			System.out.println(i++ + " => " + jet);
+		}
+		System.out.println("What plane do you want to remove? ");
+		removeJet = uI.nextInt();
+		removeJet = removeJet  -1;
+		jets.remove(removeJet);
+		
+	}//end removeJet
 	
 	public void listJets () {
 		System.out.println(jets.size());

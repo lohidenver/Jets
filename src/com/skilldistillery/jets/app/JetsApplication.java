@@ -77,10 +77,10 @@ public class JetsApplication {//Beginning Class
 			airField.dogFight();
 		} else if ((uInput.equals("7"))) {
 			System.out.println("Add a jet to Fleet");
-			//airField.addJet();
+			airField.addJet();
 		} else if ((uInput.equals("8"))) {
 			System.out.println("Remove a jet from Fleet");
-			//airField.removeJet();
+			airField.removeJet();
 		} else if ((uInput.equals("9"))) {
 			System.out.println("You have chosen to exit.");
 			System.exit(0);
